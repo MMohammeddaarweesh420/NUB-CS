@@ -1,0 +1,70 @@
+---
+description: 
+globs: 
+alwaysApply: false
+---
+# Feature Structure Roles
+
+This file defines the roles and responsibilities for organizing features in our NextJS TypeScript project.
+
+## Feature Structure
+
+Each feature should be organized with the following folder structure:
+
+```
+features/
+└── feature-name/
+    ├── api/            # API requests and endpoints
+    ├── hooks/          # React Query hooks for data fetching
+    ├── components/     # Feature-specific components
+    ├── context/        # Context providers for the feature
+    ├── utils/          # Utility functions for the feature
+    └── pages/          # Ready-made pages for the feature
+```
+
+## Role Definitions
+
+### API
+- Contains all API request functions
+- Handles communication with backend services
+- Defines request and response types
+- Example file: `getUsers.ts`, `createUser.ts`
+- use makeFakeRequest function when make the api that in make-request.ts file
+
+### Hooks
+- Implements Tanstack React Query hooks
+- Manages data fetching, caching, and synchronization
+- Handles loading, error, and success states
+- Example file: `useUsers.ts`, `useCreateUser.ts`
+
+### Components
+- Contains feature-specific UI components
+- Follows component composition patterns
+- Maintains separation of concerns
+- Example file: `UserList.tsx`, `UserForm.tsx`
+
+### Context
+- Provides state management for the feature
+- Defines context providers and consumers
+- Handles feature-specific global state
+- Example file: `UserContext.tsx`
+
+### Utils
+- Contains helper functions for the feature
+- Handles data transformation and validation
+- Provides reusable logic
+- Example file: `userValidation.ts`, `formatUserData.ts`
+
+### Pages
+- Contains ready-made page components
+- Composes components from the feature
+- Handles routing and page-level state
+- Example file: `UsersPage.tsx`, `UserDetailsPage.tsx`
+
+## Usage Guidelines
+
+1. Keep feature folders isolated and self-contained
+2. Use relative imports within a feature
+3. Export only what's needed from the feature's index.ts
+4. Follow naming conventions consistently
+5. Document complex logic and component APIs
